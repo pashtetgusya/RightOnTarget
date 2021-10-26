@@ -53,6 +53,7 @@
                             <constraint firstItem="HHy-cT-2Uz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vnQ-mK-ABK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WoN-Ro-Sin"/>
                     <connections>
                         <outlet property="label" destination="HHy-cT-2Uz" id="DYQ-RK-vMN"/>
                         <outlet property="slider" destination="fRn-2F-WQa" id="3R3-Mh-7SQ"/>
@@ -60,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="116"/>
+            <point key="canvasLocation" x="890.75829383886253" y="115.38461538461539"/>
         </scene>
     </scenes>
     <resources>

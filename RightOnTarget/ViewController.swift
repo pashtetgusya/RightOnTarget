@@ -8,47 +8,53 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var hiddenNumber: Int = 0
-    var roundNumber: Int = 0
-    var score: Int = 0
     
+    // Сущность "Игра"
+    var game: Game!
+    
+    // MARK: Элементы на сцене
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     
-    @IBAction func checkNumber() {
-        let numberOnSlider = Int(self.slider.value.rounded())
-        
-        if numberOnSlider > self.hiddenNumber {
-            self.score += 50 - self.hiddenNumber + numberOnSlider
-        } else if numberOnSlider < self.hiddenNumber {
-            self.score += 50 - numberOnSlider + self.hiddenNumber
-        } else {
-            self.score += 50
-        }
-        if self.roundNumber != 5 {
-            self.roundNumber += 1
-        } else {
-            let alert = UIAlertController(
-                title: "Игра окончена.",
-                message: "Вы заработали \(self.score) очков.",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(
-                title: "Начать заново.",
-                style: .default,
-                handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.roundNumber = 1
-            self.score = 0
-        }
-        
-        self.hiddenNumber = Int.random(in: 1...50)
-        self.label.text = String(self.hiddenNumber)
-    }
-    
+    // MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        game = Game(startValue: 1, endValue: 50, round: 5)
+        updateLableWithSecretNumber(nexText: String(game.currentHiddenValue))
+    }
+
+    
+    // MARK: Взаимодействие View - Model
+    // Проверка выбранного пользователем числа
+    @IBAction func checkNumber() {
+        game.calculateScore(with: Int(slider.value))
         
-        self.hiddenNumber = Int.random(in: 0...50)
-        self.label.text = String(self.hiddenNumber)
+        if game.isGameEnded {
+            showAllertWith(score: game.score)
+            game.restartGame()
+        } else {
+            game.startNewRound()
+        }
+        
+        updateLableWithSecretNumber(nexText: String(game.currentHiddenValue))
+    }
+    
+    // MARK: Обновление View
+    // Обновление текста о текущем загаданном числе
+    private func updateLableWithSecretNumber(nexText: String) {
+        label.text = nexText
+    }
+    // Отображение она со счетом
+    private func showAllertWith(score: Int) {
+        let alert = UIAlertController(
+            title: "Игра окончена.",
+            message: "Вы заработали \(score) очков.",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "Начать заново.",
+            style: .default,
+            handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

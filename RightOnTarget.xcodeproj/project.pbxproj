@@ -13,6 +13,7 @@
 		E54B93EC272510C9009359F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54B93EA272510C9009359F7 /* Main.storyboard */; };
 		E54B93EE272510CB009359F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54B93ED272510CB009359F7 /* Assets.xcassets */; };
 		E54B93F1272510CB009359F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54B93EF272510CB009359F7 /* LaunchScreen.storyboard */; };
+		E5988B82272866F2008BF900 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B81272866F2008BF900 /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E54B93ED272510CB009359F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E54B93F0272510CB009359F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54B93F2272510CB009359F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5988B81272866F2008BF900 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		E54B93E3272510C9009359F7 /* RightOnTarget */ = {
 			isa = PBXGroup;
 			children = (
+				E5988B80272866C2008BF900 /* Models */,
 				E54B93E4272510C9009359F7 /* AppDelegate.swift */,
 				E54B93E6272510C9009359F7 /* SceneDelegate.swift */,
 				E54B93E8272510C9009359F7 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				E54B93F2272510CB009359F7 /* Info.plist */,
 			);
 			path = RightOnTarget;
+			sourceTree = "<group>";
+		};
+		E5988B80272866C2008BF900 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5988B81272866F2008BF900 /* GameModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54B93E9272510C9009359F7 /* ViewController.swift in Sources */,
+				E5988B82272866F2008BF900 /* GameModel.swift in Sources */,
 				E54B93E5272510C9009359F7 /* AppDelegate.swift in Sources */,
 				E54B93E7272510C9009359F7 /* SceneDelegate.swift in Sources */,
 			);
@@ -301,7 +313,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pavel-yarovoi.RightOnTarget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -329,7 +341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pavel-yarovoi.RightOnTarget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
