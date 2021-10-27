@@ -19,17 +19,17 @@ class ViewController: UIViewController {
     // MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        game = Game(startValue: 1, endValue: 50, round: 5)
-        updateLableWithSecretNumber(nexText: String(game.currentHiddenValue))
+        
+        let generator = NumberGenerator(startValue: 1, endValue: 50)
+        game = Game(valueGenerator: generator!, rounds: 5)
+        updateLableWithSecretNumber(nexText: String(game.currentRound.currentHiddenValue))
     }
 
     
     // MARK: Взаимодействие View - Model
     // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
-        game.calculateScore(with: Int(slider.value))
-        
+        game.currentRound.calculateScore(with: Int(slider.value))
         if game.isGameEnded {
             showAllertWith(score: game.score)
             game.restartGame()
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             game.startNewRound()
         }
         
-        updateLableWithSecretNumber(nexText: String(game.currentHiddenValue))
+        updateLableWithSecretNumber(nexText: String(game.currentRound.currentHiddenValue))
     }
     
     // MARK: Обновление View

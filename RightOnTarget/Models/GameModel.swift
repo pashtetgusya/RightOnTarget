@@ -10,58 +10,52 @@ import Foundation
 
 protocol GameProtocol {
     var score: Int { get }
-    var currentHiddenValue: Int { get }
+    var currentRound: GameRoundProtocol! { get }
     var isGameEnded: Bool { get }
+    var hiddenValueGenerator: NuberGeneratorProtocol { get }
     
     func restartGame()
     func startNewRound()
-    func calculateScore(with value: Int)
 }
 
 class Game: GameProtocol {
-    var score: Int = 0
-    private var minHiddenValue: Int = 0
-    private var maxHiddenValue: Int = 0
-    var currentHiddenValue: Int = 0
-    private var lastRount: Int
-    private var currentRound: Int = 1
+    var score: Int {
+        var totalScore: Int = 0
+        for round in self.rounds {
+            totalScore += round.score
+        }
+        return totalScore
+    }
+    var hiddenValueGenerator: NuberGeneratorProtocol
+    private var roundsCount: Int!
+    var currentRound: GameRoundProtocol!
+    var rounds: [GameRoundProtocol] = []
     var isGameEnded: Bool {
-        if currentRound == lastRount {
+        if roundsCount == rounds.count {
             return true
         } else {
             return false
         }
     }
     
-    init?(startValue: Int, endValue: Int, round: Int) {
-        guard startValue <= endValue else {
-            return nil
-        }
-        minHiddenValue = startValue
-        maxHiddenValue = endValue
-        lastRount = round
-        currentHiddenValue = self.getNewHiddenValue()
-    }
-    private func getNewHiddenValue() -> Int {
-        (minHiddenValue...maxHiddenValue).randomElement()!
-    }
-
-    func startNewRound() {
-        currentHiddenValue = self.getNewHiddenValue()
-        currentRound += 1
-    }
-    func restartGame() {
-        currentRound = 0
-        score = 0
+    init(valueGenerator: NuberGeneratorProtocol, rounds: Int) {
+        hiddenValueGenerator = valueGenerator
+        roundsCount = rounds
         startNewRound()
     }
-    func calculateScore(with value: Int) {
-        if value > currentHiddenValue {
-            score += 50 - value + currentHiddenValue
-        } else if value < currentHiddenValue {
-            score += 50 - currentHiddenValue + value
-        } else {
-            score += 50
-        }
+    
+    func startNewRound() {
+        let newHiddenValue = self.getNewHiddenValue()
+        currentRound = GameRound(hiddenValue: newHiddenValue)
+        rounds.append(currentRound)
+    }
+    
+    func restartGame() {
+        rounds = []
+        startNewRound()
+    }
+
+    private func getNewHiddenValue() -> Int {
+        return hiddenValueGenerator.getRandomValue()
     }
 }
