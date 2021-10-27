@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  NumberViewController.swift
 //  RightOnTarget
 //
-//  Created by Pavel Yarovoi on 24.10.2021.
+//  Created by Pavel Yarovoi on 27.10.2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class NumberViewController: UIViewController {
     
     // Сущность "Игра"
     var game: Game!
