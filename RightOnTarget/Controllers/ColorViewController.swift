@@ -11,7 +11,9 @@ import UIKit
 class ColorViewController: UIViewController {
     
     // Сущность "Игра"
-    var colorGame: ColorGame!
+    var colorGame: Game<String>!
+    var colorGameRound: GameRound<String>!
+    var colorGenerator: ValueGenerator<String>!
     var buttonsWithColors: [UIButton]!
     var correctButton: UIButton!
     
@@ -25,12 +27,13 @@ class ColorViewController: UIViewController {
     // MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        colorGame = ColorGame(round: 5)
-        updateLableWithHiddenColor(newText: colorGame.currentHiddenColor)
+        colorGenerator = ValueGenerator.init()
+        colorGameRound = GameRound.init(hiddenValue: colorGenerator)
+        colorGame = Game.init(valueGenerator: colorGenerator, gameRound: colorGameRound, rounds: 5)
+        updateLableWithHiddenColor(newText: String(colorGame.currentRound.currentHiddenValue))
         
         buttonsWithColors = [buttonOne, buttonTwo, buttonThree, buttonFour]
-        generateColorInButtons(hiddenColor: UIColor(hex: colorGame.currentHiddenColor)!)
+        generateColorInButtons(hiddenColor: UIColor(hex: colorGame.currentRound.currentHiddenValue)!)
         
         for button in buttonsWithColors {
             changeButton(button: button)
@@ -47,15 +50,15 @@ class ColorViewController: UIViewController {
     // MARK: Взаимодействие View - Model
     // Проверка выбранного пользователем числа
     @IBAction func checkColor(sender: UIButton) {
-        colorGame.calculateScore(with: sender.backgroundColor!)
+        colorGame.currentRound.calculateScore(with: sender.backgroundColor!.asHexColorCode())
         if colorGame.isGameEnded {
             showAllertWith(score: colorGame.score)
             colorGame.restartGame()
         } else {
             colorGame.startNewRound()
         }
-        updateLableWithHiddenColor(newText: colorGame.currentHiddenColor)
-        generateColorInButtons(hiddenColor: UIColor(hex: colorGame.currentHiddenColor)!)
+        updateLableWithHiddenColor(newText: colorGame.currentRound.currentHiddenValue)
+        generateColorInButtons(hiddenColor: UIColor(hex: colorGame.currentRound.currentHiddenValue)!)
     }
     
     // MARK: Обновление View
@@ -83,7 +86,7 @@ class ColorViewController: UIViewController {
             if button == correctButton {
                 button.backgroundColor = hiddenColor
             } else {
-                let randomColorWithOtherButton = UIColor(hex: colorGame.getRandomColor())
+                let randomColorWithOtherButton = UIColor(hex: colorGenerator.getRandomValue())
                 button.backgroundColor = randomColorWithOtherButton
             }
         }

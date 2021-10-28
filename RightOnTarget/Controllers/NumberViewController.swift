@@ -11,7 +11,9 @@ import UIKit
 class NumberViewController: UIViewController {
     
     // Сущность "Игра"
-    var game: Game!
+    var numberGame: Game<Int>!
+    var numberGameRound: GameRound<Int>!
+    var numberGenerator: ValueGenerator<Int>!
     
     // MARK: Элементы на сцене
     @IBOutlet var slider: UISlider!
@@ -20,25 +22,25 @@ class NumberViewController: UIViewController {
     // MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let generator = NumberGenerator(startValue: 1, endValue: 50)
-        game = Game(valueGenerator: generator!, rounds: 5)
-        updateLableWithSecretNumber(nexText: String(game.currentRound.currentHiddenValue))
+        numberGenerator = ValueGenerator.init(startValue: 1, endValue: 50)
+        numberGameRound = GameRound.init(hiddenValue: numberGenerator)
+        numberGame = Game.init(valueGenerator: numberGenerator, gameRound: numberGameRound, rounds: 5)
+        updateLableWithSecretNumber(nexText: String(numberGame.currentRound.currentHiddenValue))
     }
-
+    
     
     // MARK: Взаимодействие View - Model
     // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
-        game.currentRound.calculateScore(with: Int(slider.value))
-        if game.isGameEnded {
-            showAllertWith(score: game.score)
-            game.restartGame()
+        numberGame.currentRound.calculateScore(with: Int(slider.value))
+        if numberGame.isGameEnded {
+            showAllertWith(score: numberGame.score)
+            numberGame.restartGame()
         } else {
-            game.startNewRound()
+            numberGame.startNewRound()
         }
         
-        updateLableWithSecretNumber(nexText: String(game.currentRound.currentHiddenValue))
+        updateLableWithSecretNumber(nexText: String(numberGame.currentRound.currentHiddenValue))
     }
     
     // MARK: Обновление View

@@ -39,4 +39,19 @@ extension UIColor {
         self.init(red: channelR, green: channelG, blue: channelB, alpha: alpha)
     }
     
+    func asHexColorCode() -> String {
+        let colorComponents = self.cgColor.components
+        let channelR: CGFloat = colorComponents?[0] ?? 0.0
+        let channelG: CGFloat = colorComponents?[1] ?? 0.0
+        let channelB: CGFloat = colorComponents?[2] ?? 0.0
+        var alpha: CGFloat = 1.0
+        if colorComponents?.count == 4 {
+            alpha = colorComponents?[3] ?? 1.0
+        }
+        
+        
+        let hexColorCode = String(format: "#%02lX%02lX%02lX%02lX", lroundf(Float(channelR) * 255), lroundf(Float(channelG) * 255), lroundf(Float(channelB) * 255), lroundf(Float(alpha) * 255))
+        return hexColorCode.lowercased()
+    }
+    
 }
