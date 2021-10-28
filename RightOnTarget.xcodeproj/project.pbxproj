@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5270DF6272A74D7000EBB5E /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5270DF1272A74D7000EBB5E /* ColorGame.swift */; };
+		E5270DF7272A74D7000EBB5E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5270DF2272A74D7000EBB5E /* UIColorExtension.swift */; };
+		E5270DF8272A74D7000EBB5E /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5270DF3272A74D7000EBB5E /* NumberGenerator.swift */; };
+		E5270DF9272A74D7000EBB5E /* NumberGameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5270DF4272A74D7000EBB5E /* NumberGameRound.swift */; };
+		E5270DFA272A74D7000EBB5E /* NumberGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5270DF5272A74D7000EBB5E /* NumberGame.swift */; };
 		E54B93E5272510C9009359F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B93E4272510C9009359F7 /* AppDelegate.swift */; };
 		E54B93E7272510C9009359F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B93E6272510C9009359F7 /* SceneDelegate.swift */; };
 		E54B93E9272510C9009359F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B93E8272510C9009359F7 /* MainViewController.swift */; };
 		E54B93EC272510C9009359F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54B93EA272510C9009359F7 /* Main.storyboard */; };
 		E54B93EE272510CB009359F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54B93ED272510CB009359F7 /* Assets.xcassets */; };
 		E54B93F1272510CB009359F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54B93EF272510CB009359F7 /* LaunchScreen.storyboard */; };
-		E5988B82272866F2008BF900 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B81272866F2008BF900 /* GameModel.swift */; };
-		E5988B842728F79E008BF900 /* GameRoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B832728F79E008BF900 /* GameRoundModel.swift */; };
-		E5988B862728F7C0008BF900 /* GeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B852728F7C0008BF900 /* GeneratorModel.swift */; };
 		E5988B8827290839008BF900 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B8727290839008BF900 /* ColorViewController.swift */; };
 		E5988B8A27290856008BF900 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B8927290856008BF900 /* NumberViewController.swift */; };
-		E5988B8C27291BE4008BF900 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5988B8B27291BE4008BF900 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E5270DF1272A74D7000EBB5E /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
+		E5270DF2272A74D7000EBB5E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E5270DF3272A74D7000EBB5E /* NumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
+		E5270DF4272A74D7000EBB5E /* NumberGameRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberGameRound.swift; sourceTree = "<group>"; };
+		E5270DF5272A74D7000EBB5E /* NumberGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberGame.swift; sourceTree = "<group>"; };
 		E54B93E1272510C9009359F7 /* RightOnTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightOnTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54B93E4272510C9009359F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E54B93E6272510C9009359F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,12 +36,8 @@
 		E54B93ED272510CB009359F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E54B93F0272510CB009359F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54B93F2272510CB009359F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5988B81272866F2008BF900 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
-		E5988B832728F79E008BF900 /* GameRoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoundModel.swift; sourceTree = "<group>"; };
-		E5988B852728F7C0008BF900 /* GeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorModel.swift; sourceTree = "<group>"; };
 		E5988B8727290839008BF900 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		E5988B8927290856008BF900 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
-		E5988B8B27291BE4008BF900 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +82,11 @@
 		E5988B80272866C2008BF900 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E5988B81272866F2008BF900 /* GameModel.swift */,
-				E5988B832728F79E008BF900 /* GameRoundModel.swift */,
-				E5988B852728F7C0008BF900 /* GeneratorModel.swift */,
-				E5988B8B27291BE4008BF900 /* Color.swift */,
+				E5270DF1272A74D7000EBB5E /* ColorGame.swift */,
+				E5270DF5272A74D7000EBB5E /* NumberGame.swift */,
+				E5270DF4272A74D7000EBB5E /* NumberGameRound.swift */,
+				E5270DF3272A74D7000EBB5E /* NumberGenerator.swift */,
+				E5270DF2272A74D7000EBB5E /* UIColorExtension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,15 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5270DF8272A74D7000EBB5E /* NumberGenerator.swift in Sources */,
 				E54B93E9272510C9009359F7 /* MainViewController.swift in Sources */,
-				E5988B842728F79E008BF900 /* GameRoundModel.swift in Sources */,
-				E5988B82272866F2008BF900 /* GameModel.swift in Sources */,
-				E5988B862728F7C0008BF900 /* GeneratorModel.swift in Sources */,
+				E5270DF7272A74D7000EBB5E /* UIColorExtension.swift in Sources */,
+				E5270DF6272A74D7000EBB5E /* ColorGame.swift in Sources */,
+				E5270DF9272A74D7000EBB5E /* NumberGameRound.swift in Sources */,
 				E5988B8827290839008BF900 /* ColorViewController.swift in Sources */,
 				E5988B8A27290856008BF900 /* NumberViewController.swift in Sources */,
 				E54B93E5272510C9009359F7 /* AppDelegate.swift in Sources */,
+				E5270DFA272A74D7000EBB5E /* NumberGame.swift in Sources */,
 				E54B93E7272510C9009359F7 /* SceneDelegate.swift in Sources */,
-				E5988B8C27291BE4008BF900 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
