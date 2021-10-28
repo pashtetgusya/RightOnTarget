@@ -3,7 +3,7 @@
 
 ## Скриншоты
 
-# Кглавное меню
+# Главное меню
 ![Simulator Screen Shot - iPhone 13 Pro - 2021-10-28 at 15 33 39](https://user-images.githubusercontent.com/25635870/139218902-4e7e6754-c8a6-4e95-a936-d4a1cbf13812.png)
 
 # Первый режим
