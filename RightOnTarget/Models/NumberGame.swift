@@ -13,7 +13,6 @@ protocol GameProtocol {
     var currentRound: GameRoundProtocol! { get }
     var isGameEnded: Bool { get }
     var hiddenValueGenerator: NuberGeneratorProtocol { get }
-    
     func restartGame()
     func startNewRound()
 }
@@ -54,7 +53,7 @@ class Game: GameProtocol {
         rounds = []
         startNewRound()
     }
-
+    
     private func getNewHiddenValue() -> Int {
         return hiddenValueGenerator.getRandomValue()
     }
